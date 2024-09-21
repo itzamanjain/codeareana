@@ -40,9 +40,9 @@ services:
   server:
     image: judge0/judge0:1.13.1
     volumes:
-      - ./judge0.conf:/judge0.conf:ro
+      - .\\judge0.conf:/judge0.conf:ro
       - type: bind
-        source: "##YOUR_LOCAL_PATH_TO_PROBLEMS_DIR## [repo]/apps/problems"
+        source: "D:\\os projects\\algorithmic-arena\\apps\\problems"  # Use your local Windows path
         target: /dev/problems
     ports:
       - "2358:2358"
@@ -55,9 +55,9 @@ services:
     image: judge0/judge0:1.13.1
     command: ["./scripts/workers"]
     volumes:
-      - ./judge0.conf:/judge0.conf:ro
+      - .\\judge0.conf:/judge0.conf:ro
       - type: bind
-        source: "##YOUR_LOCAL_PATH_TO_PROBLEMS_DIR## [repo]/apps/problems"
+        source: "D:\\os projects\\algorithmic-arena\\apps\\problems"  # Use your local Windows path
         target: /dev/problems
     privileged: true
     restart: always
@@ -78,6 +78,7 @@ services:
       driver: none
     volumes:
       - cache:/data
+
 volumes:
   postgres_data:
   cache:

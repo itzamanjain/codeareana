@@ -8,8 +8,9 @@ interface Problem {
   inputs: string[];
   outputs: string[];
 }
-
 const MOUNT_PATH = process.env.MOUNT_PATH ?? "/home/ubuntu/algorithmic-arena/apps/problems";
+
+
 export const getProblem = async (
   problemId: string,
   languageId: SUPPORTED_LANGS,
